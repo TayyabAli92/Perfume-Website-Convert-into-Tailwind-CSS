@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center p-4 mb-12 mt-12">
+    <div className="flex flex-col bg-white justify-center p-4 mb-12 mt-12">
       <div className="flex flex-col items-center mb-5">
         <h1 className="text-3xl font-bold text-center mb-4">Scents Boutique</h1>
         <p className="text-lg text-center">Your destination for luxurious fragrances.</p>

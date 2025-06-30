@@ -2,7 +2,7 @@ import PerfumeType from "@/components/perfume";
 
 export default function PerfumeItem() {
   return (
-    <div className="p-5 md:p-10 h-auto">
+    <div className="p-5 md:p-10 bg-white h-auto">
       <h1 className="text-center mb-5 font-bold text-4xl">Perfume Item</h1>
       <div className="flex flex-wrap justify-center md:justify-around">
         <PerfumeType
