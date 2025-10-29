@@ -3,15 +3,70 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffdfc; /* warm white */
+  --foreground: #1a1a1a;
+  --pink-soft: #f9e4ec; /* updated pastel */
+  --pink: #f3b6cf;
+  --beige: #f3ede6;
+  --black: #111111;
+  --gold: #d4af37;
+  --card: #ffffffcc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Typography */
+html, body {
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: var(--background);
+  color: var(--foreground);
 }
+
+/* Headings use Playfair */
+h1, h2, h3, .font-display { font-family: var(--font-playfair), Georgia, Cambria, "Times New Roman", Times, serif; }
+
+/* Luxury gradients */
+.lux-gradient { background: linear-gradient(135deg, var(--beige), #ffffff 40%, var(--pink-soft)); }
+.hero-gradient { background: radial-gradient(1200px 600px at 80% 10%, rgba(243,182,207,0.35), transparent 60%), linear-gradient(180deg, #ffffff, var(--beige)); }
+
+/* Page fade-in on route change */
+.page-fade { animation: fadeIn 500ms ease both; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px; /* center */
+  margin-top: -5px;  /* center */
+  border-radius: 9999px;
+  background: rgba(212, 175, 55, 0.95); /* gold */
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.75);
+  z-index: 50;
+  transition: transform 120ms ease;
+}
+
+.custom-cursor::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 60%);
+  filter: blur(6px);
+}
+
+/* Buttons */
+.btn-primary { @apply inline-flex items-center justify-center rounded-full bg-black text-white px-6 py-2 font-medium shadow-sm hover:bg-black/90 active:bg-black transition; box-shadow: 0 0 0 2px var(--gold) inset; }
+.btn-outline { @apply inline-flex items-center justify-center rounded-full border border-black/10 bg-white/60 backdrop-blur px-6 py-2 hover:bg-white transition; }
+
+/* Card */
+.lux-card { @apply bg-white/70 backdrop-blur border border-black/5 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)]; }
+
+/* Gold underline utility */
+.gold-underline { position: relative; }
+.gold-underline::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0; background: var(--gold); transition: width .3s ease; }
+.gold-underline:hover::after { width: 100%; }
+
 
 

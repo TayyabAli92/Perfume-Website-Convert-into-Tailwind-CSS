@@ -1,9 +1,9 @@
 export default function Footer() {
     return (
-      <div className="bg-pink-200 shadow-lg">
-        <footer className="text-center py-4 w-full">
-          <p>&copy; 2024 Perfume Boutique. All rights reserved.</p>
-        </footer>
-      </div>
+      <footer className="mt-16 border-t border-black/5 bg-white/60 backdrop-blur">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 py-6 text-center text-sm text-gray-600">
+          <p>&copy; 2024 Scents Boutique. All rights reserved.</p>
+        </div>
+      </footer>
     );
-  }
+}
